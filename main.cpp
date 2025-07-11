@@ -11,6 +11,9 @@ Write a program that reads in sec01/babynames.txt and produces two files, boynam
 
 #include <iostream>
 #include <fstream>
+#include <string>   
+#include <sstream>  
+#include <cctype>
 
 using namespace std; 
 
@@ -55,21 +58,21 @@ while (getline(inputFile, line))
         istringstream iss(line);
         int rank;           
         string name;   
-        char genderChar;    
+        char gender;    
         int count;          
 
-        if (!(iss >> rank >> name >> genderChar >> count)) {
+        if (!(iss >> rank >> name >> gender >> count)) {
             std::cerr << "Couldn't parse line " << lineNum
                       << line << endl;
             continue;
         }
 
-        if (genderChar == 'M') {
+        if (gender == 'M') {
             boyFile << line << endl; 
-        } else if (genderChar == 'F') {
-            girlFile << line << std::endl; 
+        } else if (gender == 'F') {
+            girlFile << line << endl; 
         } else {
-            cerr << "Unknown gender: " << genderChar << " ," << lineNum
+            cerr << "Unknown gender '" << gender << lineNum
                       << line << endl;
         }
     }
