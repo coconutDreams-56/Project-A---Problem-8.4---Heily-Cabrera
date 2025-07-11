@@ -10,7 +10,7 @@ Write a program that reads in sec01/babynames.txt and produces two files, boynam
 / Heily Cabrera Guerrero/
 
 #include <iostream>
-#include <stream>
+#include <fstream>
 
 using namespace std; 
 
@@ -45,7 +45,7 @@ ofstream girlFile(oGirlName);
 
 while (getline(inputFile, line)) 
 {
-        lineNumber++; 
+        lineNum++; 
 
         if (line.empty()) 
         {
@@ -59,7 +59,7 @@ while (getline(inputFile, line))
         int count;          
 
         if (!(iss >> rank >> name >> genderChar >> count)) {
-            std::cerr << "Couldn't parse line " << lineNumber
+            std::cerr << "Couldn't parse line " << lineNum
                       << line << endl;
             continue;
         }
@@ -69,7 +69,7 @@ while (getline(inputFile, line))
         } else if (genderChar == 'F') {
             girlFile << line << std::endl; 
         } else {
-            cerr << "Unknown gender '" << genderChar << lineNumber
+            cerr << "Unknown gender: " << genderChar << " ," << lineNum
                       << line << endl;
         }
     }
