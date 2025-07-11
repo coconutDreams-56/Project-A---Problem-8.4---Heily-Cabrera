@@ -1,1 +1,7 @@
+1 James M 5000
+2 Mary F 4800
+3 John M 4600
+4 Patricia F 4550
+5 Robert M 4400
+6 Jennifer F 4300
 
